@@ -1,0 +1,5 @@
+@include font-face("Tinos-Italic", "../fonts/Tinos-Italic", $file-formats: ttf); // RadioModern Italic
+@include font-face("Playfair-Regular", "../fonts/PlayfairDisplaySC-Regular", $file-formats: ttf); // RadioModern Medium
+@include font-face("SofiaRegular", "../fonts/SofiaProCondRegular", $file-formats: ttf);
+@include font-face("SofiaSemibold", "../fonts/SofiaProCondSemibold", $file-formats: ttf);
+@include font-face("SofiaExtLight", "../fonts/SofiaProCondExtLight", $file-formats: ttf);
