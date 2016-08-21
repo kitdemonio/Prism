@@ -10,6 +10,7 @@
   <!-- Place favicon.ico in the root directory -->
 
   <!-- build:css styles/vendor.css -->
+  <link rel="stylesheet" href="plugins/slicknav/slicknav.min.css">
   <!-- bower:css -->
   <!-- endbower -->
   <!-- endbuild -->
@@ -24,6 +25,32 @@
 </head>
 <body>
 
+<header>
+  <nav>
+    <div class="logo">
+      <img src="./images/header-logo.png" alt="Prism">
+    </div>
+    <div class="outer-container">
+      <ul class="text-uppercase list-inline nav" id="nav">
+        <li>
+          <a href="#" class="active">Architecture</a>
+        </li>
+        <li>
+          <a href="#">Travel</a>
+        </li>
+        <li>
+          <a href="#">Art</a>
+        </li>
+        <li>
+          <a href="#">Food</a>
+        </li>
+      </ul>
+    </div>
+    <div class="search" id="search">
+      <i class="fa fa-search"></i>
+    </div>
+  </nav>
+</header>
 
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
@@ -47,6 +74,7 @@
 <!-- build:js scripts/vendor.js -->
 <!-- bower:js -->
 <script src="/bower_components/jquery/dist/jquery.js"></script>
+<script src="plugins/slicknav/jquery.slicknav.min.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 

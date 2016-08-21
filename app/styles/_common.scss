@@ -1,0 +1,37 @@
+.outer-container {
+  @include outer-container;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.list-inline {
+  li {
+    display: inline-block;
+  }
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  a.active {
+    position: relative;
+    &:before {
+      @include media(max-width 767px){
+        display: none;
+      }
+      content: "";
+      display: block;
+      clear: both;
+      bottom: -20px;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+      position: absolute;
+      width: 28px;
+      height: 2px;
+      background-color: $link-color;
+    }
+  }
+}

@@ -2,8 +2,35 @@
 @import "grid/grid-settings";
 @import "../../bower_components/neat/app/assets/stylesheets/neat";
 @import "../../bower_components/bourbon/app/assets/stylesheets/bourbon";
+@import "../../bower_components/font-awesome/scss/font-awesome";
 // endbower
 @import "variables";
 @import "common";
 @import "fonts";
+@import "header";
+@import "content";
+@import "footer";
 
+a, p {
+  color: $link-color;
+}
+p {
+  font-family: "SofiaRegular", sans-serif;
+  font-weight: 400;
+  font-size: em(16);
+}
+
+a {
+  font-family: "SofiaSemibold", sans-serif;
+  text-decoration: none;
+  letter-spacing: em(2);
+}
+
+body {
+  background-color: $bg-color;
+  padding:30px 40px;
+  @include media(max-width 767px) {
+    padding:30px 10px;
+  }
+  margin:0;
+}
