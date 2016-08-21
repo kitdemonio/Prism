@@ -4,11 +4,11 @@
 $column: 90px;
 $gutter: 10px;
 $grid-columns: 12;
-$max-width: 1280px;
+$max-width: 1170px;
 
 // Define breakpoints
-$desktop-large: new-breakpoint(min-width 1280px 12);
-$desktop: new-breakpoint(min-width 992px 11);
-$tablet: new-breakpoint(min-width 768px 8);
-$mobile: new-breakpoint(min-width 480px 4);
-$xs-mobile: new-breakpoint(min-width 320px 3);
+//$desktop-large: new-breakpoint(min-width 1170px 12);
+$desktop: new-breakpoint(min-width 1170px 12);
+$tablet: new-breakpoint(min-width 768px max-width 1170px 12);
+$mobile: new-breakpoint(min-width 480px max-width 768px 12);
+$xs-mobile: new-breakpoint(min-width 320px max-width 480px 12);
