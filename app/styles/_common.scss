@@ -2,6 +2,39 @@
   @include outer-container;
 }
 
+.outer-container-wide {
+  @include outer-container(1280px);
+  position: relative;
+  padding: 0 45px;
+  .background {
+    position: relative;
+    z-index: -5;
+    @include outer-container(1280px);
+    @include fill-parent();
+    height: 650px;
+    background-color: #000;
+  }
+}
+
+.center-block {
+  display: block;
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+}
+
+.col-4 {
+  @include span-columns(4);
+}
+
+.col-8 {
+  @include span-columns(8);
+}
+
+.col-12 {
+  @include span-columns(12);
+}
+
 .text-uppercase {
   text-transform: uppercase;
 }
@@ -14,24 +47,64 @@
   padding: 0;
 }
 
-li {
-  a.active {
-    position: relative;
-    &:before {
-      @include media(max-width 767px){
-        display: none;
-      }
-      content: "";
-      display: block;
-      clear: both;
-      bottom: -20px;
-      left: 50%;
-      -webkit-transform: translateX(-50%);
-      transform: translateX(-50%);
-      position: absolute;
-      width: 28px;
-      height: 2px;
-      background-color: $link-color;
+.btn-primary {
+  display: block;
+  outline: none;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-transform: uppercase;
+  border-radius: 0;
+  color: #fff;
+  width: 118px;
+  height: 34px;
+  margin-top: 35px;
+}
+
+.underline {
+  position: relative;
+  &:before {
+    @include media(max-width 767px) {
+      display: none;
     }
+    content: "";
+    display: block;
+    clear: both;
+    bottom: -20px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    position: absolute;
+    width: 28px;
+    height: 2px;
+    background-color: $link-color;
   }
+}
+
+.h-line {
+  position: relative;
+  &:before {
+    content: "";
+    display: block;
+    clear: both;
+    position: absolute;
+    //top:-240px;
+    width: 2px;
+    height: 240px;
+    background-color: #313335;
+  }
+}
+
+.active {
+  @extend .underline;
+}
+
+span.author {
+  font-size: em(12);
+  font-family: "SofiaExtLight", sans-serif;
+  letter-spacing: em(1);
+}
+
+span.featured {
+  display: inline-block;
+  margin-bottom: 60px;
 }

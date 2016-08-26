@@ -14,10 +14,32 @@
 a, p {
   color: $link-color;
 }
+
+h2 {
+  font-size:em(44);
+  writing-mode: vertical-rl;
+}
+
+h2, h3 {
+  font-family:'Playfair-Regular',sans-serif;
+  font-weight:500;
+  letter-spacing:em(1);
+}
+
+h3.featured {
+  font-size:em(50);
+}
+
+h3 {
+  font-size:em(30);
+}
+
 p {
-  font-family: "SofiaRegular", sans-serif;
+  font-family: "SofiaExtLight", sans-serif;
   font-weight: 400;
+  letter-spacing:em(1);
   font-size: em(16);
+  line-height: em(24);
 }
 
 a {
@@ -28,9 +50,9 @@ a {
 
 body {
   background-color: $bg-color;
-  padding:30px 40px;
+  padding: 30px 40px;
   @include media(max-width 767px) {
-    padding:30px 10px;
+    padding: 30px 10px;
   }
-  margin:0;
+  margin: 0;
 }
