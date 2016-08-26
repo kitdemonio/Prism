@@ -3,7 +3,7 @@
 }
 
 .outer-container-wide {
-  @include outer-container(1280px);
+  @include outer-container(1350px);
   position: relative;
   padding: 0 45px;
   .background {

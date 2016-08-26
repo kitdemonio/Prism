@@ -2,7 +2,7 @@ section {
   .outer-container {
     position: absolute;
     top:0;
-    left:8%;
+    left:7%;
   }
   &.outer-container-wide {
     margin-top: 60px;
@@ -48,8 +48,8 @@ section {
       line-height: 80px;
       &:before {
         height:140px;
-        top:30%;
-        transform: translateY(-30%) translateX(-50%);
+        top:25%;
+        transform: translateY(-25%) translateX(-50%);
         right:50%;
       }
     }
