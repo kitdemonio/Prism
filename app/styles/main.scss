@@ -17,6 +17,9 @@ a, p {
 
 h2 {
   font-size:em(44);
+  @include media($tablet) {
+    font-size:em(20);
+  }
   writing-mode: vertical-rl;
 }
 
@@ -28,10 +31,17 @@ h2, h3 {
 
 h3.featured {
   font-size:em(50);
+  @include media($tablet) {
+    font-size:em(40);
+    word-spacing: em(80);
+  }
 }
 
 h3 {
   font-size:em(30);
+  @include media($tablet) {
+    font-size:em(26);
+  }
 }
 
 p {
@@ -40,6 +50,9 @@ p {
   letter-spacing:em(1);
   font-size: em(16);
   line-height: em(24);
+  @include media($tablet) {
+    font-size:em(14);
+  }
 }
 
 a {
@@ -52,6 +65,12 @@ body {
   background-color: $bg-color;
   padding: 30px 40px;
   @include media(max-width 767px) {
+    padding: 30px 10px;
+  }
+  @include media($tablet) {
+    padding: 30px 0;
+  }
+  @include media($laptop) {
     padding: 30px 10px;
   }
   margin: 0;

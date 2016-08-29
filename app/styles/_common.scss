@@ -3,14 +3,24 @@
 }
 
 .outer-container-wide {
-  @include outer-container(1350px);
   position: relative;
   padding: 0 45px;
+  @include outer-container(1350px);
+
+  @include media(min-width 320px max-width 1170px) {
+    padding:0;
+  }
+
   .background {
     position: relative;
     z-index: -5;
     @include outer-container(1280px);
     @include fill-parent();
+
+    @include media($tablet) {
+      height:430px;
+    }
+
     height: 650px;
     background-color: #000;
   }
@@ -33,6 +43,12 @@
 
 .col-12 {
   @include span-columns(12);
+}
+
+.col-xs-12 {
+  @include media($xs-sm) {
+    @include span-columns(12);
+  }
 }
 
 .text-uppercase {
@@ -58,14 +74,21 @@
   width: 118px;
   height: 34px;
   margin-top: 35px;
+  cursor:pointer;
+  &:hover {
+    border-color:#fff;
+    transition: border-color 0.3s ease;
+  }
 }
 
 .underline {
   position: relative;
   &:before {
+
     @include media(max-width 767px) {
       display: none;
     }
+
     content: "";
     display: block;
     clear: both;
