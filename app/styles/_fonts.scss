@@ -1,5 +1,5 @@
-@include font-face("Tinos-Italic", "../fonts/Tinos-Italic", $file-formats: ttf); // RadioModern Italic
-@include font-face("Playfair-Regular", "../fonts/PlayfairDisplay-Regular", $file-formats: ttf); // RadioModern Medium
-@include font-face("SofiaRegular", "../fonts/SofiaProCondRegular", $file-formats: ttf);
-@include font-face("SofiaSemibold", "../fonts/SofiaProCondSemibold", $file-formats: ttf);
-@include font-face("SofiaExtLight", "../fonts/SofiaProCondExtLight", $file-formats: ttf);
+@include font-face("Tinos-Italic", "../fonts/Tinos-Italic/tinos-italic-webfont", $file-formats: ttf eot svg woff woff2); // RadioModern Italic
+@include font-face("Playfair-Regular", "../fonts/PlayfairDisplay/PlayfairDisplay-Regular-webfont", $file-formats: ttf eot svg woff woff2); // RadioModern Medium
+@include font-face("SofiaRegular", "../fonts/SofiaProCondRegular/sofiaprocondregular-webfont", $file-formats: ttf eot svg woff woff2);
+@include font-face("SofiaSemibold", "../fonts/SofiaProCondSemibold/sofiaprocondsemibold-webfont", $file-formats: ttf eot svg woff woff2);
+@include font-face("SofiaExtLight", "../fonts/SofiaProCondExtLight/sofiaprocondextlight-webfont", $file-formats: ttf eot svg woff woff2);
