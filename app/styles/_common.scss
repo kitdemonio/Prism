@@ -12,13 +12,18 @@
   }
 
   .background {
-    position: relative;
+    position: absolute;
     z-index: -5;
     @include outer-container(1280px);
     @include fill-parent();
 
     @include media($tablet) {
       height:430px;
+    }
+
+    @include media($desktop) {
+      right: 50%;
+      transform: translateX(50%);
     }
 
     height: 650px;
