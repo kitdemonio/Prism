@@ -97,7 +97,7 @@ section {
 
         @include media(max-width 767px) {
           @include span-columns(12);
-          font-size:em(24);
+          font-size: em(24);
           &:before {
             right: 180px;
           }
@@ -129,7 +129,7 @@ section {
 
       @include media(max-width 767px) {
         @include span-columns(12);
-        margin-top:20px;
+        margin-top: 20px;
       }
 
     }
@@ -146,8 +146,8 @@ section {
 
         @include media($tablet) {
           @include span-columns(3 of 7);
-          height:326px;
-          line-height:326px;
+          height: 326px;
+          line-height: 326px;
         }
 
         @include media(max-width 767px) {
@@ -179,9 +179,240 @@ section {
 
         @include media(max-width 767px) {
           @include span-columns(12);
-          padding-top:20px;
+          padding-top: 20px;
         }
       }
     }
+  }
+}
+
+.travel {
+  @include media(max-width 1170px) {
+    padding: 0 10px;
+    position: relative;
+  }
+  .slider {
+    margin-top: 230px;
+    @include span-columns(7 of 12);
+
+    @include media($xs-sm) {
+      @include span-columns(12);
+    }
+
+    @include media($tablet) {
+      @include span-columns(12);
+    }
+
+    .owl-controls {
+      position: absolute;
+      top: -60px;
+      left: 100px;
+
+      span {
+        background-color: initial;
+        border: 1px solid #fff;
+      }
+
+      .active {
+        span {
+          background-color: #fff;
+        }
+
+        &:before {
+          display: none;
+        }
+      }
+    }
+
+    article {
+      img {
+        @include media(max-width 1170px) {
+          width:100%;
+        }
+      }
+    }
+
+    .article-content {
+      overflow: hidden;
+
+      @include span-columns(5 of 7);
+
+      @include shift(1);
+
+      @include media($tablet) {
+        @include span-columns(4 of 7);
+      }
+
+    }
+  }
+
+  .col-5 {
+    @include media ($desktop) {
+      position: relative;
+    }
+
+
+    .background {
+      background-color: #000;
+      width: 635px;
+      height: 537px;
+      position: absolute;
+      z-index: -5;
+      top: 140px;
+      right: -50px;
+
+      @include media (max-width 1365px) {
+        right: 0;
+      }
+
+      @include media($xs-mobile) {
+        left:0;
+        right:0;
+        width:inherit;
+      }
+
+      @include media ($tablet) {
+        width:170px;
+        height:650px;
+      }
+
+      @include media($mobile) {
+        right: 0;
+        left: 0;
+        width: 100%;
+        height:680px;
+      }
+
+      @include media (min-width 1024px max-width 1170px) {
+        height:770px;
+      }
+
+    }
+
+    @include direction-context(right-to-left) {
+      @include span-columns(5 of 12);
+    }
+
+    @include media($xs-sm) {
+      @include span-columns(12);
+    }
+
+    @include media($tablet) {
+      @include span-columns(12);
+      margin-top:50px;
+      display:flex;
+    }
+
+    .col-5-of-5 { // Travel Logo
+
+      @include direction-context(right-to-left) {
+        @include span-columns(6 of 12);
+        order:1;
+        align-self:center;
+      }
+
+      @include media(max-width 767px) {
+        display: none;
+      }
+
+      @include media($desktop) {
+        @include span-columns(4 of 5);
+        @include shift(1);
+        margin-top: 20px;
+      }
+
+      img {
+
+        @include media($tablet) {
+          padding:0 50px;
+        }
+
+        @include media(min-width 768px max-width 1023px) {
+
+        }
+
+        margin: 0 auto;
+        width: 100%;
+        display: block;
+      }
+    }
+
+    .col-1-of-5 {
+      @include span-columns(1 of 5);
+      line-height: 30px;
+
+      @include media ($tablet) {
+        width:0;
+      }
+
+
+      .h-line {
+        height: 330px;
+        text-align: center;
+        &::before {
+          bottom: 260px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        @include media(max-width 1170px) {
+          position: absolute;
+          top: 143px;
+          right: 55px;
+          writing-mode: initial;
+          text-align:right;
+          font-size:em(30);
+          &:before {
+            left: 70px;
+            top: 15px;
+            width: 40px;
+            height: 2px;
+            transform: translateX(100%);
+          }
+        }
+
+        @include media(max-width 767px) {
+          top:65px;
+        }
+
+      }
+    }
+
+    .col-4-of-5 {
+      @include span-columns(6 of 12);
+
+      @include media(max-width 767px) {
+        @include span-columns(12);
+        padding-top:30px;
+      }
+
+      @include media($desktop) {
+        @include span-columns(4 of 5);
+        margin-top: 50px;
+      }
+      .img {
+        width: 100%;
+        height: auto;
+        background: url('../images/travel-main.jpg') center no-repeat;
+        font-size: em(319);
+        font-family: 'Playfair-Regular', serif;
+        text-align: center;
+      }
+    }
+
+    .col-3-of-4 {
+      @include span-columns(3 of 4);
+
+      @include media($tablet) {
+        @include span-columns(4 of 6);
+        @include shift(2);
+      }
+
+      @include media($mobile) {
+        @include span-columns(5 of 6);
+        @include shift(1);
+      }
+    }
+
   }
 }

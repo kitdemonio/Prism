@@ -110,7 +110,7 @@
 
 .h-line {
   position: relative;
-  &:before {
+  &::before {
     content: "";
     display: block;
     clear: both;
@@ -130,6 +130,7 @@ span.author {
   font-size: em(12);
   font-family: "SofiaExtLight", sans-serif;
   letter-spacing: em(1);
+  text-transform: uppercase;
 }
 
 span.featured {
