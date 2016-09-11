@@ -18,31 +18,32 @@ a, p {
 }
 
 h2 {
-  font-size:em(44);
+  font-size: em(44);
   @include media($tablet) {
-    font-size:em(20);
+    font-size: em(20);
   }
   writing-mode: vertical-rl;
 }
 
 h2, h3 {
-  font-family:'Playfair-Regular',serif;
-  font-weight:500;
-  letter-spacing:em(1);
+  font-family: 'Playfair-Regular', serif;
+  font-weight: 500;
+  letter-spacing: em(1);
 }
 
 h3.featured {
-  font-size:em(50);
+  font-size: em(50);
   @include media($tablet) {
-    font-size:em(40);
+    font-size: em(40);
     word-spacing: em(80);
   }
 }
 
 h3 {
-  font-size:em(30);
+  font-size: em(30);
+  text-transform: uppercase;
   @include media($tablet) {
-    font-size:em(26);
+    font-size: em(26);
   }
 }
 
@@ -56,11 +57,11 @@ h4.article-title {
 p {
   font-family: "SofiaExtLight", serif;
   font-weight: 400;
-  letter-spacing:em(1);
+  letter-spacing: em(1);
   font-size: em(16);
   line-height: em(24);
   @include media($tablet) {
-    font-size:em(14);
+    font-size: em(14);
   }
 }
 
