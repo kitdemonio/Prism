@@ -534,6 +534,8 @@ section {
     img {
       max-width: 100%;
       height: auto;
+      display: block;
+      margin: 0 auto;
     }
 
     @include media($xs-sm) {
@@ -565,6 +567,169 @@ section {
       display: block;
       text-align: center;
     }
+  }
+}
 
+.food {
+  position: relative;
+  padding: 0 10px;
+
+  @include media($xs-sm) {
+    margin-top: 100px;
+  }
+
+  .background {
+    @include media(max-width 1170px) {
+      width: 597px;
+      height: 165px;
+    }
+
+    @include media($xs-sm) {
+      width: 100%;
+      right: 0;
+      left: 0;
+    }
+
+    position: absolute;
+    background-color: #000000;
+    width: 436px;
+    height: 419px;
+    z-index: -5;
+    top: 70px;
+    left: -60px;
+  }
+
+  .primary-article {
+    @include media($xs-sm) {
+      @include span-columns(12);
+      @include omega();
+      text-align: center;
+    }
+
+    @include media($tablet) {
+      @include span-columns(4);
+    }
+
+    @include span-columns(4);
+    @include omega();
+
+    article {
+      @include media($tablet) {
+        @include fill-parent();
+      }
+
+      @include media($xs-sm) {
+        @include span-columns(12);
+        @include omega();
+      }
+
+      @include span-columns(3 of 4);
+
+      img {
+        max-width: 100%;
+        margin: 0 auto;
+        display: block;
+      }
+    }
+
+    .article-content {
+      @include media($tablet) {
+        @include span-columns(9 of 12);
+        @include omega(0);
+        margin-left: auto;
+        margin-right: auto !important;
+        float: none;
+      }
+
+      @include media($xs-sm) {
+        @include span-columns(12);
+        @include omega();
+      }
+
+    }
+
+    .article-title {
+      @include span-columns(12);
+      display: inline-block;
+    }
+
+    span {
+      display: inline-block;
+    }
+
+    .h-line {
+      @include media(max-width 1170px) {
+        font-size: em(26);
+        position: absolute;
+        height: inherit;
+        writing-mode: initial;
+        &::before {
+          width: 100px;
+          height: 2px;
+          right: -120px;
+          transform: translateY(-50%);
+          top: 50%;
+        }
+      }
+
+      @include media($tablet) {
+        top: 90px;
+        left: 330px;
+      }
+
+      @include media($xs-sm) {
+        top: -70px;
+        width: inherit;
+        right: 25px;
+        &::before {
+          right: 80px;
+        }
+      }
+
+      @include direction-context(right-to-left) {
+        @include span-columns(1);
+        text-align: right;
+        height: 358px;
+        line-height: 28px;
+        &::before {
+          @include media(min-width 1170px) {
+            right: 50%;
+            transform: translateX(-50%);
+          }
+        }
+      }
+    }
+  }
+  .articles {
+    @include media($xs-sm) {
+      @include span-columns(12);
+      padding-top: 0;
+    }
+
+    @include media($tablet) {
+      @include span-columns(8);
+      font-size: em(12);
+    }
+
+    @include span-columns(8);
+    padding-top: 170px;
+    article {
+      @include media($xs-sm) {
+        @include span-columns(6);
+        @include omega();
+        padding: 5px;
+        text-align: center;
+        margin-top:50px;
+        img {
+          margin: 0 auto;
+          display: block;
+        }
+      }
+
+      @include span-columns(3);
+      img {
+        max-width: 100%;
+      }
+    }
   }
 }
