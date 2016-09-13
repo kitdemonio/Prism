@@ -27,10 +27,10 @@ $(document).ready(function () {
   });
 
   // Anchor scroll
-  $('a[href^="#"]').click(function () {
+  $('a[href^="#"][href!="#"]').click(function () {
     var el = $(this).attr('href');
     $('li>.active').removeClass('active');
-    $(this).addClass('active');
+      $(this).addClass('active');
     $('body').animate({
       scrollTop: $(el).offset().top
     }, 800);
