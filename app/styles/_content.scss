@@ -84,7 +84,7 @@ section {
           padding-right: 5px;
           margin-top: 0;
           line-height: normal;
-          writing-mode: initial;
+          writing-mode: horizontal-tb;
           @include span-columns(5);
           &:before {
             width: 52px;
@@ -357,7 +357,7 @@ section {
           position: absolute;
           top: 143px;
           right: 55px;
-          writing-mode: initial;
+          writing-mode: horizontal-tb;
           text-align: right;
           font-size: em(26);
           &:before {
@@ -510,7 +510,7 @@ section {
           font-size: em(26);
           top: -80px;
           right: 25px;
-          writing-mode: initial;
+          writing-mode: horizontal-tb;
           transform: rotate(0deg);
           &::before {
             height: 2px;
@@ -561,6 +561,7 @@ section {
     text-transform: uppercase;
     font-family: "SofiaRegular", serif;
     padding: 25px 0;
+    display: inline-block;
 
     @include media(max-width 1170px) {
       font-size: em(11);
@@ -629,6 +630,7 @@ section {
         max-width: 100%;
         margin: 0 auto;
         display: block;
+        border:none; //For IE10
       }
     }
 
@@ -662,7 +664,7 @@ section {
         font-size: em(26);
         position: absolute;
         height: inherit;
-        writing-mode: initial;
+        writing-mode: horizontal-tb;
         &::before {
           width: 100px;
           height: 2px;
@@ -730,6 +732,10 @@ section {
       img {
         max-width: 100%;
       }
+    }
+
+    img {
+      border: none; //For IE10
     }
   }
 }

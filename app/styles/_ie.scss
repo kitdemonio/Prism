@@ -1,0 +1,44 @@
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { // For IE10 and IE11
+
+  @include media(min-width 1170px) {
+
+    .architecture {
+      .h-line {
+        top: -40px;
+      }
+
+      .col-8 {
+        article {
+          position: relative;
+          top:-75px;
+        }
+      }
+    }
+
+    .h-line {
+      &::before {
+        transform: translateX(0) !important;
+        right:50% !important;
+      }
+    }
+
+
+    .food {
+      .primary-article {
+        .h-line {
+          margin-right:40px !important;
+        }
+      }
+    }
+
+    .travel {
+      .h-line {
+        margin-left:20px;
+      }
+    }
+
+  }
+
+
+
+}
