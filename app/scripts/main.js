@@ -24,18 +24,33 @@ $(document).ready(function () {
   });
 
   // Anchor scroll
-  if (navigator.sayswho !== 'IE 11') { // Because in IE 11 anchor scrolling doesn't work
-    $('a[href^="#"][href!="#"]').click(addAnchorScroll);
-  }
-
+  $(function addAnchorScroll() {
+    $('a[href*="#"]:not([href="#"])').click(function () {
+      $('li>.active').removeClass('active');
+      $(this).addClass('active');
+      if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+        if (target.length) {
+          $('html, body').animate({
+            scrollTop: target.offset().top
+          }, 800);
+          return false;
+        }
+      }
+    });
+  });
 
   //Modal popup for all browsers except IE10
   $('#search').on('click', addSearchPopup);
+
 });
 
 var search = document.getElementById('search');
+var links = $('a[href*="#"]:not([href="#"])');
 if (search.attachEvent) {
-  search.attachEvent('onclick', addSearchPopup); //Search popup for IE10
+  search.attachEvent('onclick', addSearchPopup); //Search popup for IE10 because addEventListener doesn't work
+
 }
 
 function addSearchPopup() {
@@ -47,10 +62,10 @@ function addSearchPopup() {
   $('body').css('position', 'relative');
   input.addClass('modal-search');
   box.fadeIn(500);
-  box.css('height',window.innerHeight);
+  box.css('height', window.innerHeight);
   input.fadeIn(500);
-  input.css('top',((window.innerHeight - regex.exec(input.css('height'))[0]) / 2));
-  input.css('left',((window.innerWidth - regex.exec(input.css('width'))[0]) / 2));
+  input.css('top', ((window.innerHeight - regex.exec(input.css('height'))[0]) / 2));
+  input.css('left', ((window.innerWidth - regex.exec(input.css('width'))[0]) / 2));
 
 
   box.on('click', function (e) {
@@ -61,29 +76,3 @@ function addSearchPopup() {
   });
 }
 
-function addAnchorScroll(e) {
-  var el = $(this).attr('href');
-  $('li>.active').removeClass('active');
-  $(this).addClass('active');
-  e.preventDefault();
-  $('body').animate({
-    scrollTop: $(el).offset().top
-  }, 800);
-  return false;
-}
-
-navigator.sayswho= (function(){ // Browser detection
-  var ua= navigator.userAgent, tem,
-    M= ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
-  if(/trident/i.test(M[1])){
-    tem=  /\brv[ :]+(\d+)/g.exec(ua) || [];
-    return 'IE '+(tem[1] || '');
-  }
-  if(M[1]=== 'Chrome'){
-    tem= ua.match(/\b(OPR|Edge)\/(\d+)/);
-    if(tem!= null) return tem.slice(1).join(' ').replace('OPR', 'Opera');
-  }
-  M= M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
-  if((tem= ua.match(/version\/(\d+)/i))!= null) M.splice(1, 1, tem[1]);
-  return M.join(' ');
-})();
